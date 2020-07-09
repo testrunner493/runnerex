@@ -22,9 +22,11 @@
     <div class="absolute"> 
       
     <h3 style="text-align: center">Camera here<br></h3>
-      <div id="my_camera"></div>
-      </div>
 
+    <video id="my_camera" width="320" height="240" autoplay muted></video>
+      <!-- <div id="my_camera"></div>
+      </div> -->
+<!-- 
     <script type="text/javascript" src="webcam.min.js"></script>
     <script language="JavaScript">
       Webcam.set({
@@ -34,17 +36,11 @@
         jpeg_quality: 90
       });
 
-    //   Webcam.on( 'live', function() {
 
-    //     console.log(faceapi.nets)
-    //     await faceapi.nets.faceExpressionNet.loadFromUri('models/')
-    //     const detections = await faceapi.detectAllFaces(vid5, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
-      
-    // });
- 
       Webcam.attach( '#my_camera' );
-    </script>
+    </script> -->
     <script defer src="face-api.min.js"></script>
+    <script defer src="script.js"></script>
     <script defer src="webcam.js"></script>
 
 
