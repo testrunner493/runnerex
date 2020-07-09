@@ -33,6 +33,15 @@
         image_format: 'jpeg',
         jpeg_quality: 90
       });
+
+    //   Webcam.on( 'live', function() {
+
+    //     console.log(faceapi.nets)
+    //     await faceapi.nets.faceExpressionNet.loadFromUri('models/')
+    //     const detections = await faceapi.detectAllFaces(vid5, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
+      
+    // });
+ 
       Webcam.attach( '#my_camera' );
     </script>
     <script defer src="face-api.min.js"></script>
