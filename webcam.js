@@ -8,7 +8,7 @@
 
 (function(window) {
 var _userMedia;
-
+const video = document.getElementById('my_camera')
 // declare error types
 
 // inheritance pattern here:
@@ -1053,7 +1053,7 @@ faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
 faceapi.nets.faceExpressionNet.loadFromUri('/models')])
 
 
-Webcam.addEventListener('play', () => {
+video.addEventListener('play', () => {
 	const canvas = faceapi.createCanvasFromMedia(video)
 	document.body.append(canvas)
 	const displaySize = { width: video.width, height: video.height }
