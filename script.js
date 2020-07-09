@@ -13,15 +13,7 @@ function startVideo() {
     // stream => video.srcObject = stream,
     // err => console.error(err)
   // )
-
-  if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-    video.src = window.URL.createObjectURL(stream);
-    video.play();
-    });
-
-
-  // navigator.mediaDevices.getUserMedia({video: {}}) .then((stream)=> {video.srcObject = stream;}, (err)=> console.error(err));
+  navigator.mediaDevices.getUserMedia({video: {}}) .then((stream)=> {video.srcObject = stream;}, (err)=> console.error(err));
 }
 
 video.addEventListener('play', () => {
