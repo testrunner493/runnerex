@@ -1047,10 +1047,10 @@ else {
 }
 
 
-Promise.all([ faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-faceapi.nets.faceExpressionNet.loadFromUri('/models')]).then(console.log("face-lib loaded"))
+Promise.all([ faceapi.nets.tinyFaceDetector.loadFromUri('../models'),
+faceapi.nets.faceLandmark68Net.loadFromUri('../models'),
+faceapi.nets.faceRecognitionNet.loadFromUri('../models'),
+faceapi.nets.faceExpressionNet.loadFromUri('../models')]).then(console.log("face-lib loaded"))
 
 
 video.addEventListener('play', () => {
