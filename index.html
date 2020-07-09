@@ -16,8 +16,27 @@
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGLRunner.json", {onProgress: UnityProgress});
       
     </script>
+
+    
+
+    <div class="absolute"> 
+      
+    <h3 style="text-align: center">Camera here<br></h3>
+      <div id="my_camera"></div>
+      </div>
+
+    <script type="text/javascript" src="webcam.min.js"></script>
+    <script language="JavaScript">
+      Webcam.set({
+        width: 320,
+        height: 240,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+      });
+      Webcam.attach( '#my_camera' );
+    </script>
     <script defer src="face-api.min.js"></script>
-    <script defer src="script.js"></script>
+    <!-- <script defer src="script.js"></script> -->
 
 
      <style>
@@ -43,13 +62,17 @@
 
   </head>
   <body>
-    <div class="absolute"><video id="video" width="300" height="150" autoplay muted></video><h3 style="text-align: center;">Camera here</h3></div>
+    <div class="absolute">
+      
+    </div>
     <div class="webgl-content">
       <div id="gameContainer" style="width: 960px; height: 600px;"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
         <div class="title">Runner</div>
+
+
       </div>
     </div>
   
