@@ -8,7 +8,7 @@
 
 (function(window) {
 var _userMedia;
-const Webcam = document.getElementById('my_camera')
+// const Webcam = document.getElementById('my_camera')
 // declare error types
 
 // inheritance pattern here:
