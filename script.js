@@ -1,5 +1,4 @@
-// const video = document.getElementById('video')
-var video = document.querySelector("#videoElement");
+const video = document.getElementById('video')
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('https://localhost/t/WebGLRunner/models'),
@@ -15,15 +14,12 @@ function startVideo() {
     // err => console.error(err)
   // )
 
-  if (navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function (stream) {
-        video.srcObject = stream;
-      })
-      .catch(function (err0r) {
-        console.log("Something went wrong!");
-      });
-  }
+  if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+    video.src = window.URL.createObjectURL(stream);
+    video.play();
+    });
+
 
   // navigator.mediaDevices.getUserMedia({video: {}}) .then((stream)=> {video.srcObject = stream;}, (err)=> console.error(err));
 }
