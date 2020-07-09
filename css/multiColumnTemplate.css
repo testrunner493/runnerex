@@ -134,7 +134,7 @@ right_articleright_articleright_articleright_article@charset "UTF-8";
 }
 .left_article {
 	background-color: #FFFFFF;
-	width: 80%;
+	width: 100%;
 	float: left;
 	font-family: "Source Sans Pro";
 	color: darkred;
@@ -142,7 +142,7 @@ right_articleright_articleright_articleright_article@charset "UTF-8";
 }
 
 .h1a {
-	padding-left: 5%;
+	padding-left: 15%;
 	padding-right: 5%;
 	margin-top: 5%;
 	color: #717070;
