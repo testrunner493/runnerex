@@ -1,0 +1,14 @@
+{
+"companyName": "ICE Lab",
+"productName": "Runner",
+"dataUrl": "runnerex.data.unityweb",
+"asmCodeUrl": "runnerex.asm.code.unityweb",
+"asmMemoryUrl": "runnerex.asm.memory.unityweb",
+"asmFrameworkUrl": "runnerex.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "runnerex.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF"
+}

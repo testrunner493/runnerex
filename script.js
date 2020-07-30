@@ -1,14 +1,10 @@
-// const video = document.getElementById('video')
-
-var video = document.querySelector("#videoElement");
-
-
+const video = document.getElementById('my_camera')
 
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('https://localhost/t/WebGLRunner/models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('https://localhost/t/WebGLRunner/models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('https://localhost/t/WebGLRunner/models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('https://localhost/t/WebGLRunner/models')
+  faceapi.nets.tinyFaceDetector.loadFromUri('models/'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('models/'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('models/'),
+  faceapi.nets.faceExpressionNet.loadFromUri('models/')
 ]).then(startVideo)
 
 function startVideo() {
@@ -17,21 +13,7 @@ function startVideo() {
     // stream => video.srcObject = stream,
     // err => console.error(err)
   // )
-
-  if (navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function (stream) {
-        video.srcObject = stream;
-      })
-      .catch(function (err0r) {
-        console.log("Something went wrong!");
-      });
-
-    }
-  }
-
-
-  // navigator.mediaDevices.getUserMedia({video: {}}) .then((stream)=> {video.srcObject = stream;}, (err)=> console.error(err));
+  navigator.mediaDevices.getUserMedia({video: {}}) .then((stream)=> {video.srcObject = stream;}, (err)=> console.error(err));
 }
 
 video.addEventListener('play', () => {
