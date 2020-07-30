@@ -20,11 +20,13 @@
     
 
     <div class="absolute"> 
-      
+      <video id="my_camera" width="320" height="240" autoplay muted></video>
+          
     <h3 style="text-align: center">Camera here<br></h3>
-      <div id="my_camera"></div>
-      </div>
 
+      <!-- <div id="my_camera"></div>
+      </div> -->
+<!-- 
     <script type="text/javascript" src="webcam.min.js"></script>
     <script language="JavaScript">
       Webcam.set({
@@ -33,9 +35,12 @@
         image_format: 'jpeg',
         jpeg_quality: 90
       });
+
+
       Webcam.attach( '#my_camera' );
-    </script>
+    </script> -->
     <script defer src="face-api.min.js"></script>
+    <script defer src="script.js"></script>
     <script defer src="webcam.js"></script>
 
 
@@ -62,9 +67,9 @@
 
   </head>
   <body>
-    <div class="absolute">
+    <!-- <div class="absolute">
       
-    </div>
+    </div> -->
     <div class="webgl-content">
       <div id="gameContainer" style="width: 960px; height: 600px;"></div>
       <div class="footer">

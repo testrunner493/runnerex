@@ -8,7 +8,8 @@
 
 (function(window) {
 var _userMedia;
-const Webcam = document.getElementById('my_camera')
+// const video = document.getElementById('my_camera')
+
 // declare error types
 
 // inheritance pattern here:
@@ -1047,37 +1048,37 @@ else {
 }
 
 
-Promise.all([ faceapi.nets.tinyFaceDetector.loadFromUri('models/'),
-faceapi.nets.faceLandmark68Net.loadFromUri('models/'),
-faceapi.nets.faceRecognitionNet.loadFromUri('models/'),
-faceapi.nets.faceExpressionNet.loadFromUri('models/')]).then(console.log("face-lib loaded"))
+// Promise.all([ faceapi.nets.tinyFaceDetector.loadFromUri('models/'),
+// faceapi.nets.faceLandmark68Net.loadFromUri('models/'),
+// faceapi.nets.faceRecognitionNet.loadFromUri('models/'),
+// faceapi.nets.faceExpressionNet.loadFromUri('models/')]).then(console.log("face-lib loaded"))
 
 
-Webcam.addEventListener('play', () => {
-	const canvas = faceapi.createCanvasFromMedia(Webcam)
-	document.body.append(canvas)
-	const displaySize = { width: Webcam.width, height: Webcam.height }
-	faceapi.matchDimensions(canvas, displaySize)
-	setInterval(async () => {
-	  const detections = await faceapi.detectAllFaces(Webcam, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
-	  const faceval = await faceapi.detectAllFaces(Webcam, new faceapi.TinyFaceDetectorOptions()).withFaceExpressions()
-	  const resizedDetections = faceapi.resizeResults(detections, displaySize)
-	  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
-	  faceapi.draw.drawDetections(canvas, resizedDetections)
-	  faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-	  faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+// video.addEventListener('play', () => {
+// 	const canvas = faceapi.createCanvasFromMedia(video)
+// 	document.body.append(canvas)
+// 	const displaySize = { width: video.width, height: video.height }
+// 	faceapi.matchDimensions(canvas, displaySize)
+// 	setInterval(async () => {
+// 	  const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
+// 	  const faceval = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceExpressions()
+// 	  const resizedDetections = faceapi.resizeResults(detections, displaySize)
+// 	  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
+// 	  faceapi.draw.drawDetections(canvas, resizedDetections)
+// 	  faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
+// 	  faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
   
-	  console.log(faceval[0]['expressions']['happy'])
+// 	  console.log(faceval[0]['expressions']['happy'])
   
-	  if(faceval[0]['expressions']['happy'] > 0.8 ){
+// 	  if(faceval[0]['expressions']['happy'] > 0.8 ){
   
-		gameInstance.SendMessage('SmileGauge', 'getVal')
+// 		gameInstance.SendMessage('SmileGauge', 'getVal')
   
-	  }
+// 	  }
   
   
-	}, 100)
+// 	}, 100)
 	
-  })
+//   })
 
 }(window));
